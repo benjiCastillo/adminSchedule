@@ -1,0 +1,32 @@
+ subject:{
+	name:
+	teacher:
+	initial:
+	timetable:{
+		12a3ha4fga24:{
+			classroom:
+			init:
+			finish:
+			day:
+		}
+	}
+}
+
+SubjectMatter:{
+	2rasfcaa:{
+		initial:
+		subject:
+	},
+	32raafasa:{
+		initial:
+		subject:
+	},
+	11r3t3aa:{
+		initial:
+		subject:
+	},
+	t3fasdraa:{
+		initial:
+		subject:
+	},
+}
