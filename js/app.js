@@ -15,6 +15,10 @@ app.config(function($locationProvider, $routeProvider){
 		controller: 'EditController',
 		templateUrl: 'views/edit.html'
 	})
+	.when('/addTimeTable/:id', {
+		controller: 'AddController',
+		templateUrl: 'views/addTimeTable.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
