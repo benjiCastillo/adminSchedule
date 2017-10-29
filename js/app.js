@@ -16,7 +16,7 @@ app.config(function($locationProvider, $routeProvider){
 		templateUrl: 'views/edit.html'
 	})
 	.when('/addTimeTable/:id', {
-		controller: 'AddController',
+		controller: 'AddTimeTableController',
 		templateUrl: 'views/addTimeTable.html'
 	})
 	.otherwise({
