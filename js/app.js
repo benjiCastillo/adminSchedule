@@ -19,6 +19,10 @@ app.config(function($locationProvider, $routeProvider){
 		controller: 'AddTimeTableController',
 		templateUrl: 'views/addTimeTable.html'
 	})
+	.when('/addAsistance/:id', {
+		controller: 'AddAsistantController',
+		templateUrl: 'views/addAsistance.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
