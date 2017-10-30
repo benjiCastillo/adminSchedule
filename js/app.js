@@ -15,19 +15,27 @@ app.config(function($locationProvider, $routeProvider){
 		controller: 'EditController',
 		templateUrl: 'views/edit.html'
 	})
+	.when('/addTimeTable/:id', {
+		controller: 'AddTimeTableController',
+		templateUrl: 'views/addTimeTable.html'
+	})
+	.when('/editTimeTable/:id/:id1', {
+		controller: 'EditTimeTableController',
+		templateUrl: 'views/editTimeTable.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
     
 });
 
-var config = {
-    apiKey: "AIzaSyD440F24slYaJbFwSkXWaF6M3XazBhU_k0",
-    authDomain: "parkingsucre.firebaseapp.com",
-    databaseURL: "https://parkingsucre.firebaseio.com",
-    projectId: "parkingsucre",
-    storageBucket: "parkingsucre.appspot.com",
-    messagingSenderId: "524793348672"
+  var config = {
+    apiKey: "AIzaSyD1EgDewzkIfBM_cDwlunT7giHUC_EsPzU",
+    authDomain: "ayudantia-usfx.firebaseapp.com",
+    databaseURL: "https://ayudantia-usfx.firebaseio.com",
+    projectId: "ayudantia-usfx",
+    storageBucket: "ayudantia-usfx.appspot.com",
+    messagingSenderId: "527701327831"
   };
   firebase.initializeApp(config);
 

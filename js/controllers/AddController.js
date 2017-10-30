@@ -1,29 +1,23 @@
-app.controller('AddController', ['$scope', '$firebaseArray', '$location', function($scope, $firebaseArray, $location){
+app.controller('AddController', ['$scope', '$firebaseArray', '$location','$routeParams', function($scope, $firebaseArray, $location,$routeParams){
 	
 	const rootRef = firebase.database().ref();
 	const value = $firebaseArray(rootRef);
-	const ref = rootRef.child('parking');
-	const values = $firebaseArray(ref);
-
+	const refSub = rootRef.child('subject');
+	const values = $firebaseArray(refSub);
+	//child subject add schudule
 	
 
-	$scope.addTaxi = function() {
+	$scope.addSubject = function() {
+		console.log($scope.value);
 		values.$add({
-			name_admin: $scope.value.name_admin,
-			last_name_admin: $scope.value.last_name_admin,
-			email: $scope.value.email,
+			acronym: $scope.value.acronym,
 			name: $scope.value.name,
-            address: $scope.value.address,
-			spaces_quantity: $scope.value.spaces_quantity,
-            latitude: parseFloat($scope.value.latitude),
-            longitude: parseFloat($scope.value.longitude),
-            status: $scope.value.status,
-			working_hours: $scope.value.working_hours
+			teacher: $scope.value.teacher
 		});
+		
 		$location.path('/');
 	}
 
-	
 }]);
 
 

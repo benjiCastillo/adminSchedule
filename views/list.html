@@ -3,13 +3,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Lista de Parqueos registrados</h1>
+            <h1>Lista de Horarios</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="pull-right">
-                <a href="#/add" class="btn btn-success" role="button">Añadir Parking</a>
+                <a href="#/add" class="btn btn-success" role="button">Añadir Materia</a>
             </div>
         </div>
     </div>
@@ -20,32 +20,35 @@
     <thead>
       <tr>
         <th>Nro</th>
-        <th>Nombre Admin</th>
-        <th>Apellido Admin</th>
-        <th>Email</th>
-        <th>Nombre Parking</th>
-        <th>Dirección</th>
-        <th>Horario de Atención</th>
-        <th>Cantidad de Espacios</th>
-        <th>Latitud</th>
-        <th>Longitud</th>
-        <th>Disponibilidad</th>
+        <th>Nombre Materia</th>
+        <th>Sigla</th>
+        <th>Docente</th>
+        <th>Horarios</th>
+        <th>Añadir Horas</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="value in values">
         <td>{{$index+1}}</td>
-        <td>{{value.name_admin}}</td>
-        <td>{{value.last_name_admin}}</td>
-        <td>{{value.email}}</td>
         <td>{{value.name}}</td>
-        <td>{{value.address}}</td>
-        <td>{{value.working_hours}}</td>
-        <td>{{value.spaces_quantity}}</td>
-        <td>{{value.latitude}}</td>
-        <td>{{value.longitude}}</td>
-        <td>{{value.status | booleanFilter}}</td>
-        <td><a href="#/edit/{{value.$id}}" class="btn btn-small btn-primary">Editar</a> <a class="btn btn-small btn-danger" ng-click="removeTaxi(value.$id)">Eliminar</a></td>
+        <td>{{value.acronym}}</td>
+        <td>{{value.teacher}}</td>
+        <td>
+          <section class="well" style="display:inline-block" ng-repeat="sche in value.schedule">
+              <span class="label label-info">{{ sche.classroom }}</span>
+              <span class="label label-info">{{ sche.day }}</span>
+              <span class="label label-info">{{ sche.finish }}</span>
+              <span class="label label-info">{{ sche.init }}</span>
+              <a href="#/editTimeTable/{{value.$id}}/{{  }}" class="btn btn-small btn-primary">Editar Horas</a>
+          </section>
+          <span>
+         </span>  
+      </td>
+        <td><a href="#/addTimeTable/{{value.$id}}" class="btn btn-small btn-primary">Añadir Horas</a></td>
+        <td><a href="#/edit/{{value.$id}}" class="btn btn-small btn-primary">Editar</a></td>
+        <td><a class="btn btn-small btn-danger" ng-click="removeTaxi(value.$id)">Eliminar</a></td>
       
       </tr>
     </tbody>

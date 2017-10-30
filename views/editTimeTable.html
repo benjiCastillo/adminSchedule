@@ -1,0 +1,52 @@
+<div class="col-md-offset-2 col-md-8">
+    
+    <section class="well bs-component">
+        <h1 class="text-center">Editar Horario</h1>
+        <br>
+        <form class="form-horizontal" role="form">
+    
+              <div class="form-group">
+                <label for="classroom" class="col-sm-2 control-label">Aula:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" id="classroom" 
+                         name ="classroom" ng-model="time_table.classroom" placeholder="Aulas"/>
+                </div>
+              </div>
+              <div class="form-group">
+              
+                <label for="day" class="col-sm-2 control-label">Dia:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" id="day" 
+                         name="day" ng-model="time_table.day" placeholder="Dia"/>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="init " class="col-sm-2 control-label">Hora de Inicio:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text " id="init" 
+                         name ="init " ng-model="time_table.init" placeholder="Hora de Inicio"/>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                    <label for="finish " class="col-sm-2 control-label">Hora de Fin:</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text " id="finish" 
+                             name ="finish" ng-model="time_table.finish" placeholder="Hora de Fin"/>
+                    </div>
+              </div>
+    
+            
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <a ng-click="editTimetable()" class="btn btn-block btn-small btn-primary">Editar</a>
+                  <br>
+                  <a href="#/" class="btn btn-block btn-small btn-danger">Cancelar</a>
+                </div>
+              </div>
+              
+        </form>
+    </section>
+    
+    </div>
