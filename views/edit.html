@@ -1,23 +1,37 @@
 <div class="col-md-offset-2 col-md-8">
     
     <section class="well bs-component">
-    <h1 class="text-center">Editar Taxi</h1>
+    <h1 class="text-center">Editar Materia</h1>
     <br>
     <form name="edit_form" class="form-horizontal" role="form">
-          <div class="form-group">
-            <label for="nombreAdmin" class="col-sm-2 control-label">Nombre Admin:</label>
-            <div class="col-sm-10">
-              <input class="form-control" type="text" id="nombreAdmin"
-                     name ="NombreAdmin" ng-model="value.name_admin" placeholder="Nombre Admin"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="apellido" class="col-sm-2 control-label">Apellido:</label>
-            <div class="col-sm-10">
-              <input class="form-control" type="text" id="apellido"
-                     name ="apellido" ng-model="value.last_name_admin" placeholder="Apellido Admin"/>
-            </div>
-          </div>
+      <div class="form-group">
+        <label for="nombreMateria" class="col-sm-2 control-label">Nombre Materia:</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" id="nombreMateria" 
+                 name ="nombreMateria" ng-model="value.name" placeholder="Nombre Materia"/>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="teacher" class="col-sm-2 control-label">Docente:</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" id="teacher" 
+                 name="teacher" ng-model="value.teacher" placeholder="Docente"/>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="acronym " class="col-sm-2 control-label">Sigla:</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="acronym " id="acronym " 
+                 name ="acronym " ng-model="value.acronym" placeholder="acronym "/>
+        </div>
+      </div>
+
+    
+      <div class="form-group">
+        <div class="col-sm-12">
+          <a ng-click="editSubject()" class="btn btn-block btn-small btn-primary">Editar</a>
 
           <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Email:</label>

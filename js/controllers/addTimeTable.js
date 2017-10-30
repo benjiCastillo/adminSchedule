@@ -1,3 +1,4 @@
+
 app.controller('AddTimeTableController', ['$scope', '$firebaseArray', '$location','$routeParams','$firebaseObject', function($scope, $firebaseArray, $location,$routeParams,$firebaseObject){
 	
 	const rootRef = firebase.database().ref();
@@ -6,13 +7,12 @@ app.controller('AddTimeTableController', ['$scope', '$firebaseArray', '$location
 	const values = $firebaseArray(refSub);
 
     const key = refSub.child($routeParams.id).child('schedule');
+
 	const valuesTimes = $firebaseArray(key);	
     //data
     const dataSchedule = refSub.child($routeParams.id);
     $scope.valueSchedule = $firebaseObject(dataSchedule);
     console.log($scope.valueSchedule);
-   
-
 	$scope.addTimetable = function(){
 		console.log($scope);
 		valuesTimes.$add({

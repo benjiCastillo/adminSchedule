@@ -3,14 +3,14 @@ app.controller('ListController', ['$scope', '$firebaseArray', '$firebaseObject',
   const rootRef = firebase.database().ref();
   const values = rootRef.child('subject');
   $scope.values = $firebaseArray(values);
-
+  
   console.log($scope.values);
 
   $scope.removeSubject = function(id) {
     var ref = values.child(id);
     var value = $firebaseObject(ref);
     value.$remove();
-   };
+  };
 
 }]);
 
