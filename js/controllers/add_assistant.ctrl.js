@@ -1,25 +1,24 @@
-
-app.controller('AddTimeTableController', ['$scope', '$firebaseArray', '$location','$routeParams','$firebaseObject', function($scope, $firebaseArray, $location,$routeParams,$firebaseObject){
+app.controller('AddAsistantController', ['$scope', '$firebaseArray', '$location','$routeParams','$firebaseObject', function($scope, $firebaseArray, $location,$routeParams,$firebaseObject){
 	
 	const rootRef = firebase.database().ref();
 	const value = $firebaseArray(rootRef);
 	const refSub = rootRef.child('subject');
 	const values = $firebaseArray(refSub);
 
-    const key = refSub.child($routeParams.id).child('schedule');
-
+    const key = refSub.child($routeParams.id).child('assistance');
 	const valuesTimes = $firebaseArray(key);	
     //data
     const dataSchedule = refSub.child($routeParams.id);
     $scope.valueSchedule = $firebaseObject(dataSchedule);
     console.log($scope.valueSchedule);
-	$scope.addTimetable = function(){
+   
+
+	$scope.addAsistance = function(){
 		console.log($scope);
 		valuesTimes.$add({
-			classroom:$scope.value.classroom,
-			init:$scope.value.init,
-			finish:$scope.value.finish,
-			day:$scope.value.day
+			name:$scope.value.name,
+			email:$scope.value.email,
+			phone:$scope.value.phone
 		})
 		$location.path('/');
 	}

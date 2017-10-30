@@ -23,6 +23,9 @@
         <th>Nombre Materia</th>
         <th>Sigla</th>
         <th>Docente</th>
+
+        <th>Añadir Ayudante</th>
+
         <th>Horarios</th>
         <th>Añadir Horas</th>
         <th>Editar</th>
@@ -35,6 +38,9 @@
         <td>{{value.name}}</td>
         <td>{{value.acronym}}</td>
         <td>{{value.teacher}}</td>
+
+        <td><a href="#/addAsistance/{{value.$id}}" class="btn btn-small btn-info">Añadir</a></td>
+
         <td>
           <section class="well" style="display:inline-block" ng-repeat="sche in value.schedule">
               <span class="label label-info">{{ sche.classroom }}</span>
@@ -43,8 +49,7 @@
               <span class="label label-info">{{ sche.init }}</span>
               <a href="#/editTimeTable/{{value.$id}}/{{  }}" class="btn btn-small btn-primary">Editar Horas</a>
           </section>
-          <span>
-         </span>  
+
       </td>
         <td><a href="#/addTimeTable/{{value.$id}}" class="btn btn-small btn-primary">Añadir Horas</a></td>
         <td><a href="#/edit/{{value.$id}}" class="btn btn-small btn-primary">Editar</a></td>

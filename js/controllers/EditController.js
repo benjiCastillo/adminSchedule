@@ -7,6 +7,9 @@ const ref = rootRef.child('subject');
 
 const refSub = ref.child($routeParams.id);
 
+$scope.value = $firebaseObject(refSub);
+
+
 const refTimeTable = refSub.child($routeParams.id);
 $scope.time_table = $firebaseObject(refTimeTable);
 
@@ -17,11 +20,13 @@ $scope.editSubject = function() {
         acronym: $scope.value.acronym,
         name: $scope.value.name,
         teacher: $scope.value.teacher
+
     });
     $scope.edit_form.$setPristine();
     $scope.value = {};
     $location.path('/');
 };
+
  
 }]);
 
