@@ -12,8 +12,13 @@ app.controller('AddTimeTableController', ['$scope', '$firebaseArray', '$location
     //data
     const dataSchedule = refSub.child($routeParams.id);
     $scope.valueSchedule = $firebaseObject(dataSchedule);
-    console.log($scope.valueSchedule);
+	console.log($scope.valueSchedule);
+	
+
+
 	$scope.addTimetable = function(){
+	var	idSchedule = $scope.valueSchedule.$id;
+
 		console.log($scope);
 		valuesTimes.$add({
 			classroom:$scope.value.classroom,
@@ -21,7 +26,8 @@ app.controller('AddTimeTableController', ['$scope', '$firebaseArray', '$location
 			finish:$scope.value.finish,
 			day:$scope.value.day
 		})
-		$location.path('/');
+	
+		console.log($location.path('/listScheduleSubject/'+idSchedule));
 	}
 
 }]);

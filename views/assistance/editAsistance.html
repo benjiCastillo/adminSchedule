@@ -1,7 +1,7 @@
 <div class="col-md-offset-2 col-md-8">
     
     <section class="well bs-component">
-        <h1 class="text-center">Añadir Ayudante</h1>
+        <h1 class="text-center">Editar Ayudante</h1>
         <br>
         <div class="text-center" style="font-size: 20px;">
           <span class="text-primary">Materia: </span><span>{{ valueSchedule.name }}</span> &nbsp;&nbsp;
@@ -40,9 +40,9 @@
             
               <div class="form-group">
                 <div class="col-sm-12">
-                  <a ng-click="addAsistance()" class="btn btn-block btn-small btn-primary">Añadir</a>
+                  <a ng-click="editAsistance()" class="btn btn-block btn-small btn-primary">Editar</a>
                   <br>
-                  <a href="#/" class="btn btn-block btn-small btn-danger">Cancelar</a>
+                  <a href="#/listAsistance/{{idS}}" class="btn btn-block btn-small btn-danger">Cancelar</a>
                 </div>
               </div>
               

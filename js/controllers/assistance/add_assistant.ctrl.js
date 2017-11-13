@@ -14,13 +14,14 @@ app.controller('AddAsistantController', ['$scope', '$firebaseArray', '$location'
    
 
 	$scope.addAsistance = function(){
+		var	idAsistance = $scope.valueSchedule.$id;
 		console.log($scope);
 		valuesTimes.$add({
 			name:$scope.value.name,
 			email:$scope.value.email,
 			phone:$scope.value.phone
 		})
-		$location.path('/');
+		$location.path('/listAsistance/'+idAsistance);
 	}
 
 }]);

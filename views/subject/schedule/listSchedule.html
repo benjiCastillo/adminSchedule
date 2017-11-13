@@ -1,0 +1,56 @@
+<!-- Content Section -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Horarios de Materia</h1>
+        </div>
+        <div class="col-md-12">
+            <br>
+                <div class="text-center" style="font-size: 20px;">
+                    <span class="text-primary">Materia: </span><span>{{ valueSchedule.name }}</span> &nbsp;&nbsp;
+                    <span class="text-primary">Sigla: </span><span>{{ valueSchedule.acronym }}</span> &nbsp;&nbsp;
+                    <br>
+                    <span class="text-primary">Docente: </span><span>{{ valueSchedule.teacher }}</span> &nbsp;&nbsp;
+                    <span class="text-primary">Semestre: </span><span>{{ valueSchedule.semester }}</span> &nbsp;&nbsp;
+                </div>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <a href="#/addTimeTable/{{valueSchedule.$id}}"class="btn btn-success" role="button">Añadir Horario</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Content Section -->
+<section class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Nro</th>
+        <th>Aula</th>
+        <th>Dia</th>
+        <th>Hora de Inicio</th>
+        <th>Hora de fin</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="value in values">
+        <td>{{$index+1}}</td>
+        <td>{{value.classroom}}</td>
+        <td>{{value.day}}</td>
+        <td>{{value.init}}</td>
+        <td>{{value.finish}}</td>
+        <td><a href="#/editTimeTable/{{valueSchedule.$id}}/{{value.$id}}/" class="btn btn-small btn-primary">Editar</a></td>
+        <td><a class="btn btn-small btn-danger" ng-click="removeSchedule(value.$id)">Eliminar</a></td>
+      
+      </tr>
+    </tbody>
+  </table>
+</section>
+  
+

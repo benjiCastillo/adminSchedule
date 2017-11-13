@@ -14,8 +14,14 @@
         </div>
     </div>
 </div>
+
+<div class="lds-css ng-scope" ng-show="loaderInfo">
+  <div  class="lds-rolling">
+    <div></div>
+  </div>
+</div>
 <!-- /Content Section -->
-<section class="table-responsive">
+<section class="table-responsive" ng-show="!loaderInfo">
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -23,11 +29,9 @@
         <th>Nombre Materia</th>
         <th>Sigla</th>
         <th>Docente</th>
-
-        <th>Añadir Ayudante</th>
-
+        <th>Semestre</th>
         <th>Horarios</th>
-        <th>Añadir Horas</th>
+        <th>Ver Ayudantes</th>
         <th>Editar</th>
         <th>Eliminar</th>
       </tr>
@@ -38,23 +42,14 @@
         <td>{{value.name}}</td>
         <td>{{value.acronym}}</td>
         <td>{{value.teacher}}</td>
-
-        <td><a href="#/addAsistance/{{value.$id}}" class="btn btn-small btn-info">Añadir</a></td>
-
-        <td>
-          <section class="well" style="display:inline-block" ng-repeat="sche in value.schedule">
-              <span class="label label-info">{{ sche.classroom }}</span>
-              <span class="label label-info">{{ sche.day }}</span>
-              <span class="label label-info">{{ sche.finish }}</span>
-              <span class="label label-info">{{ sche.init }}</span>
-              <a href="#/editTimeTable/{{value.$id}}/{{  }}" class="btn btn-small btn-primary">Editar Horas</a>
-          </section>
-
-      </td>
-        <td><a href="#/addTimeTable/{{value.$id}}" class="btn btn-small btn-primary">Añadir Horas</a></td>
+        <td>{{value.semester}}</td>
+        <td><a href="#/listScheduleSubject/{{value.$id}}"><i class="fa fa-calendar fa-2" aria-hidden="true"></i></a></td>
+        <!-- <td><a href="#/listScheduleSubject/{{value.$id}}" class="btn btn-small btn-info">Ver Horarios</a></td> -->
+        <!-- <td><a href="#/addAsistance/{{value.$id}}"><i class="fa fa-user-plus fa-2" aria-hidden="true"></i></a></td> -->
+        <td><a href="#/listAsistance/{{value.$id}}"><i class="fa fa-users fa-2" aria-hidden="true"></i></a></td>
+        <!-- <td><a href="#/addTimeTable/{{value.$id}}" class="btn btn-small btn-primary">Añadir Horas</a></td> -->
         <td><a href="#/edit/{{value.$id}}" class="btn btn-small btn-primary">Editar</a></td>
         <td><a class="btn btn-small btn-danger" ng-click="removeTaxi(value.$id)">Eliminar</a></td>
-      
       </tr>
     </tbody>
   </table>

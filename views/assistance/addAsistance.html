@@ -1,0 +1,51 @@
+<div class="col-md-offset-2 col-md-8">
+    
+    <section class="well bs-component">
+        <h1 class="text-center">Añadir Ayudante</h1>
+        <br>
+        <div class="text-center" style="font-size: 20px;">
+          <span class="text-primary">Materia: </span><span>{{ valueSchedule.name }}</span> &nbsp;&nbsp;
+          <span class="text-primary">Sigla: </span><span>{{ valueSchedule.acronym }}</span> &nbsp;&nbsp;
+          <br>
+          <span class="text-primary">Docente: </span><span>{{ valueSchedule.teacher }}</span> &nbsp;&nbsp;
+          <span class="text-primary">Semestre: </span><span>{{ valueSchedule.semester }}</span> &nbsp;&nbsp;
+          
+        </div>
+        <br>
+        <form class="form-horizontal" role="form">
+    
+              <div class="form-group">
+                <label for="classroom" class="col-sm-2 control-label">Nombre:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" id="classroom" 
+                         name ="classroom" ng-model="value.name" placeholder="Nombre"/>
+                </div>
+              </div>
+              <div class="form-group">
+              
+                <label for="day" class="col-sm-2 control-label">Correo Electronico:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" id="day" 
+                         name="day" ng-model="value.email" placeholder="Email"/>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="init " class="col-sm-2 control-label">Celular:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text " id="init" 
+                         name ="init " ng-model="value.phone" placeholder="Celular"/>
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <a ng-click="addAsistance()" class="btn btn-block btn-small btn-primary">Añadir</a>
+                  <br>
+                  <a href="#/listAsistance/{{ valueSchedule.$id }}" class="btn btn-block btn-small btn-danger">Cancelar</a>
+                </div>
+              </div>
+              
+        </form>
+    </section>
+</div>

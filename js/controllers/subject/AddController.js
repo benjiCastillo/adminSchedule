@@ -12,7 +12,8 @@ app.controller('AddController', ['$scope', '$firebaseArray', '$location','$route
 		values.$add({
 			acronym: $scope.value.acronym,
 			name: $scope.value.name,
-			teacher: $scope.value.teacher
+			teacher: $scope.value.teacher,
+			semester: $scope.value.semester
 		});
 		
 		$location.path('/');

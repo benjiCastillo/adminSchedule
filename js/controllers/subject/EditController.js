@@ -16,6 +16,7 @@ $scope.time_table = $firebaseObject(refTimeTable);
 console.log($scope.value);
 
 $scope.editSubject = function() {
+    console.log("edit");
     $scope.value.$save({
         acronym: $scope.value.acronym,
         name: $scope.value.name,
